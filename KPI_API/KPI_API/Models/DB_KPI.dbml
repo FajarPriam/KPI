@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DB_FATB_KPI_KPT" Class="DB_KPIDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.VW_USER_PROFILE" Member="VW_USER_PROFILEs">
+    <Type Name="VW_USER_PROFILE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_ROLE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[USER]" Member="USER" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="POS_TITLE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DSTRCT_CODE" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_M_ROLE" Member="TBL_M_ROLEs">
+    <Type Name="TBL_M_ROLE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MENU_ROLE" Member="VW_MENU_ROLEs">
+    <Type Name="VW_MENU_ROLE">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ROLE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROLE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MENU_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_PARENT_MENU" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_DESC" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="URL" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="ICON" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[ORDER]" Member="ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

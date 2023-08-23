@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "UserIndex";
+}
+
+<input type="hidden" id="hd_path" value="@ViewBag.path" />
+
+<div>
+    <button>Add</button>
+    <table class="display compact" style="width:100%" id="tbl_users">
+        <thead>
+            <tr>
+                <th scope="col">Action</th>
+                <th scope="col">NRP</th>
+                <th scope="col">Name</th>
+                <th scope="col">Role</th>
+                <th scope="col">Position</th>
+                <th scope="col">District</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<script src="~/Js/Master.UserIndex.js"></script>

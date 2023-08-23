@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Uploads";
+}
+
+<input type="hidden" id="hd_path" value="@ViewBag.path" />
+
+<section class="row" aria-labelledby="aspnetTitle">
+    <input type="file" class="form-control" id="fle_excel" />
+    <button class="btn btn-secondary" id="btn_upload" onclick="uploadExcel()">Upload</button>
+</section>
+
+<script src="~/Js/Master.Uploads.js"></script>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<KPI.Models.VW_MENU_ROLE>
+
+<nav class="mt-2">
+    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-main-heading">Layout</li>
+        @foreach (var item in Model.Where(a => a.ID_PARENT_MENU == 0))
+        {
+            if (item.ID_PARENT_MENU == 0 && item.URL == "#")
+            {
+                <li class="nav-item">
+                    <a href="@item.URL" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>
+                            @item.MENU_DESC
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    @SubMenu(item)
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a href="@item.URL" class="nav-link">
+                        <i class="fas fa-circle nav-icon"></i>
+                        <p>@item.MENU_DESC</p>
+                    </a>
+                </li>
+            }
+        }
+
+        @helper SubMenu(KPI.Models.VW_MENU_ROLE item)
+        {
+            <ul class="nav nav-treeview">
+                @foreach (var sub in Model.Where(a => a.ID_PARENT_MENU == item.ID))
+                {
+                    if (sub.ID_PARENT_MENU != 0 && sub.URL == "#")
+                    {
+                        <li class="nav-item">
+                            <a href="@sub.URL" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    @sub.MENU_DESC
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            @SubSubMenu(sub)
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a href="@sub.URL" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>@sub.MENU_DESC</p>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        }
+
+        @helper SubSubMenu(KPI.Models.VW_MENU_ROLE item)
+        {
+            <ul class="nav nav-treeview">
+                @foreach (var sub in Model.Where(a => a.ID_PARENT_MENU == item.ID))
+                {
+                    <li class="nav-item">
+                        <a href="@sub.URL" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>@sub.MENU_DESC</p>
+                        </a>
+                    </li>
+
+                }
+            </ul>
+        }
+    </ul>
+</nav>

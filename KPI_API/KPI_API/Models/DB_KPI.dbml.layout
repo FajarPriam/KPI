@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DB_KPI">
+  <DataContextMoniker Name="/DB_KPIDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8a006b82-7725-4c7c-a014-6afaa58f8daa" absoluteBounds="0.625, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DB_KPIDataContext/VW_USER_PROFILE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97c42682-563e-49b6-9339-1db3a924268a" absoluteBounds="0.64000000000000012, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1333ba7-5b97-4991-9f34-35883189e9ed" absoluteBounds="3, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/DB_KPIDataContext/TBL_M_ROLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96593c2f-c7f6-49cd-99e6-08e81d8791f0" absoluteBounds="3.0149999999999997, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22ee6edb-4363-4cc6-9584-e68c315412b2" absoluteBounds="0.625, 3, 2, 2.5401025390625">
+      <DataClassMoniker Name="/DB_KPIDataContext/VW_MENU_ROLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e0f645ee-dd5c-4bba-851a-390b82a13270" absoluteBounds="0.63999999999999968, 3.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

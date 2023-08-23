@@ -1,0 +1,40 @@
+﻿@model IEnumerable<KPI.Models.VW_MENU_ROLE>
+
+<ul class="nav-main nav-main-horizontal nav-main-hover">
+    @foreach (var item in Model.Where(a => a.ID_PARENT_MENU == 0))
+    {
+        if (item.ID_PARENT_MENU == 0 && item.URL == "#")
+        {
+            <li class="nav-main-item">
+                <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true" aria-expanded="false" href="#">
+                    <i class="nav-main-link-icon @item.ICON"></i>
+                    <span class="nav-main-link-name">@item.MENU_DESC</span>
+                </a>
+                @SubMenu(item)
+            </li>
+        }
+        else
+        {
+            <li class="nav-main-item">
+                <a class="nav-main-link" href="@item.URL">
+                    <i class="nav-main-link-icon @item.ICON"></i>
+                    <span class="nav-main-link-name">@item.MENU_DESC</span>
+                </a>
+            </li>
+        }
+    }
+
+    @helper SubMenu(KPI.Models.VW_MENU_ROLE item)
+    {
+        <ul class="nav-main-submenu">
+            @foreach (var sub in Model.Where(a => a.ID_PARENT_MENU == item.ID))
+            {
+                <li class="nav-main-item">
+                    <a class="nav-main-link" href="@sub.URL">
+                        <span class="nav-main-link-name">@sub.MENU_DESC</span>
+                    </a>
+                </li>
+            }
+        </ul>
+    }
+</ul>
